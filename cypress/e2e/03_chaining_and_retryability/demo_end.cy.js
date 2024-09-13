@@ -1,38 +1,42 @@
 /// <reference types="cypress" />
 
-import { cardsLoadRandomly, cardsLoadSlowly } from '../../../workshop-scripts/evilCode'
-
-it('opens a card with due date on 1st March', () => {
+beforeEach(() => {
 
   cy.visit('/board/1')
+
+});
+
+it('has a card with due date on 1st March', () => {
 
   cy.get('[data-cy=list]')
     .eq(1)
-    .contains('Mar 01 2022')
-    .click()
+    .contains('[data-cy=card]', 'Mar 01 2022')
 
 })
 
-it('loads cards in our list very slowly', () => {
+it('checks date of a card', () => {
 
-  // 😈 evil code
-  cardsLoadSlowly(5000) 
+  cy.get('[data-cy=card]')
+    .eq(2)
+    .should('contain.text', 'Juice')
 
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]', { timeout: 6000 })
-    .should('have.length', 5)
+  cy
+    .get('[data-cy=due-date]')
+    .eq(2)
+    .should('have.text', 'Feb 14 2022')
   
 });
 
-it('loads cards in our list randomly', () => {
-
-  // 😈 evil code
-  cardsLoadRandomly(3000) 
-
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]')
-    .should('contain.text', 'Bread')
+it('check text of all cards in first list', () => {
   
+  cy.get('[data-cy=card-text]')
+    .then( cards => {
+    
+      // https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions
+      expect(cards[0]).to.have.text('Milk')
+      expect(cards[1]).to.have.text('Bread')
+      expect(cards[2]).to.have.text('Juice')
+
+    })
+
 });

@@ -2,6 +2,7 @@ const singleBoard = require('./fixtures/singleBoard.json')
 const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardTwoListsFiveCards = require('./fixtures/singleBoardTwoListsFiveCards.json')
 const twoBoards = require('./fixtures/twoBoards.json')
+const singleBoardSingleListThreeCardsSingleUser = require('./fixtures/singleBoardSingleListThreeCardsSingleUser.json')
 
 const beforeTestSeeds = {
   'cypress/e2e/01_creating_first_test/demo_start.cy.js': twoBoards,
@@ -17,14 +18,15 @@ const beforeTestSeeds = {
   'cypress/e2e/04_chai_assertions/challenge.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/04_chai_assertions/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_intercept/demo_start.cy.js': singleBoardSingleList,
-  'cypress/e2e/06_intercept/demo_end.cy.js': singleBoardSingleList
+  'cypress/e2e/06_intercept/demo_end.cy.js': singleBoardSingleList,
+  'cypress/e2e/08_handling_authentication_flow/challenge_solution.cy.js': singleBoardSingleListThreeCardsTwoUsers,
+  'cypress/e2e/08_handling_authentication_flow/demo_end.cy.js': singleBoardSingleListThreeCardsSingleUser,
+  'cypress/e2e/08_handling_authentication_flow/demo_start.cy.js': singleBoardSingleListThreeCardsSingleUser,
 }
 
 const beforeEachTestSeeds = {
   'cypress/e2e/02_simple_assertions/demo_start.cy.js': singleBoardSingleList,
   'cypress/e2e/02_simple_assertions/demo_end.cy.js': singleBoardSingleList,
-  'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
-  'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard
 }
 
 before( () => {

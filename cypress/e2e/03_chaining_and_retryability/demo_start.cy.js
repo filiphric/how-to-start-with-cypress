@@ -1,27 +1,41 @@
 /// <reference types="cypress" />
 
-it('opens a card with due date on 1st March', () => {
+beforeEach(() => {
+  
+  cy.visit('/board/1')
+
+});
+
+it('has a card with due date on 1st March', () => {
 
   cy.visit('/board/1')
-    
+
+  cy.contains('[data-cy=card]', 'Mar 01 2022')
+
 })
 
-it('loads cards in our list very slowly', () => {
+it('checks date of a card', () => {
 
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]')
-    .should('have.length', 5)
+  cy.get('[data-cy=card]')
+    .eq(2)
+    .should('contain.text', 'Juice')
+    .get('[data-cy=due-date]')
+    .should('have.text', 'Feb 14 2022')
   
 });
 
-it('loads cards in our list randomly', () => {
+it('check text of all cards in first list', () => {
 
-  cy.visit('/board/1')
+  cy.get('[data-cy=card-text]')
+    .eq(0)
+    .should('have.text', 'Milk')
 
   cy.get('[data-cy=card-text]')
     .eq(1)
-    .should('contain.text', 'Bread')
-  
-});
+    .should('have.text', 'Bread')
 
+  cy.get('[data-cy=card-text]')
+    .eq(2)
+    .should('have.text', 'Juice')
+
+});
