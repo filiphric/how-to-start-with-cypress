@@ -3,6 +3,7 @@ const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardTwoListsFiveCards = require('./fixtures/singleBoardTwoListsFiveCards.json')
 const twoBoards = require('./fixtures/twoBoards.json')
 const singleBoardSingleListThreeCardsSingleUser = require('./fixtures/singleBoardSingleListThreeCardsSingleUser.json')
+const singleBoardSingleListThreeCardsTwoUsers = require('./fixtures/singleBoardSingleListThreeCardsTwoUsers.json')
 
 const beforeTestSeeds = {
   'cypress/e2e/01_creating_first_test/demo_start.cy.js': twoBoards,
