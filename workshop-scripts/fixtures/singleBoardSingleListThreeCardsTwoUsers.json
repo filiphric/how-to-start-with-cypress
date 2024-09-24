@@ -1,0 +1,83 @@
+{
+  "boards": [
+    {
+      "name": "My very private board",
+      "user": 1,
+      "starred": false,
+      "created": "2022-07-21",
+      "id": 1
+    },
+    {
+      "name": "private board of the example user",
+      "user": 2,
+      "starred": false,
+      "created": "2022-07-22",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "order": 0,
+      "boardId": 1,
+      "listId": 1,
+      "name": "Celine Dion",
+      "created": "2022-07-21",
+      "deadline": "2022-07-24",
+      "description": "",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "order": 1,
+      "boardId": 1,
+      "listId": 1,
+      "name": "Christina Aguilera",
+      "created": "2022-07-21",
+      "deadline": "2022-07-24",
+      "description": "",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "order": 2,
+      "boardId": 1,
+      "listId": 1,
+      "name": "Britney Spears",
+      "created": "2022-07-21",
+      "deadline": "2022-07-24",
+      "description": "",
+      "completed": false,
+      "id": 3
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 1,
+      "name": "Favorite music",
+      "order": 0,
+      "created": "2022-07-21",
+      "id": 1
+    },
+    {
+      "boardId": 2,
+      "name": "Nothing to see here",
+      "order": 0,
+      "created": "2022-07-22",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "filip@filiphric.sk",
+      "password": "$2a$10$Zz107Vvqzajxhj04Z4yxs.u8vKMhHEj7wXlP6ftMsGYuaq.XgpBjK",
+      "welcomeEmail": false,
+      "id": 1
+    },
+    {
+      "email": "filip@example.com",
+      "password": "$2a$10$E6VbgjGav9IdR8E65QmCp.AC9JG1dkfR9f7ZHtejixKe7xuFAA0dG",
+      "welcomeEmail": false,
+      "id": 2
+    }
+  ]
+}
